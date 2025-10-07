@@ -36,7 +36,9 @@ export const PokemonCard = ({ pokemonData }) => {
     >
 
     <div className="intro">
-        <h1 className="pokemon-name">{pokemonData.name}</h1>
+        <h1 className="pokemon-name">
+        {pokemonData.name.charAt(0).toUpperCase() + pokemonData.name.slice(1)}
+        </h1>
         <p className="pokemon-Hp">
                 <span>Hp: </span> {pokemonData.stats[0].base_stat}
         </p>
