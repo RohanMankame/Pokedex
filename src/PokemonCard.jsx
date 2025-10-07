@@ -35,7 +35,13 @@ export const PokemonCard = ({ pokemonData }) => {
             style={{ backgroundColor: bgColor }}
     >
 
-    <h1 className="pokemon-name">{pokemonData.name}</h1>
+    <div className="intro">
+        <h1 className="pokemon-name">{pokemonData.name}</h1>
+        <p className="pokemon-Hp">
+                <span>Hp: </span> {pokemonData.stats[0].base_stat}
+        </p>
+    </div>
+
     <figure className="image-pokemon">
         <img src={pokemonData.sprites.other.showdown.front_default} alt={pokemonData.name} className="pokemon-image"
         
@@ -53,7 +59,7 @@ export const PokemonCard = ({ pokemonData }) => {
     </div>
 
 
-    <p>Moves: </p>
+    <p className="moves">Moves: </p>
     <div className="grid-one-cols pokemon-highlight-moves">
         <p>
             {
@@ -125,6 +131,7 @@ export const PokemonCard = ({ pokemonData }) => {
 
     </div>
 
+        
 
     </li>
 }
