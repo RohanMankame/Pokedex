@@ -11,7 +11,9 @@ html {
 
 body {
   width: 100%;
-  background-color: #eff3ff;
+  background: url('./assets/pokemonSiteBackground.jpg') no-repeat center center fixed;
+  background-size: cover;
+  
 }
 
 h1,
@@ -51,9 +53,9 @@ span {
 .grid-three-cols {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.6rem;
+  gap: 0.5rem;
   text-align: center;
-  margin: 3.2rem 0;
+  margin: 2rem 0;
   align-items: end;
 }
 
@@ -95,76 +97,38 @@ input[type="text"] {
 }
 
 .cards {
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
   grid-template-columns: repeat(4, 1fr);
   justify-content: center;
   align-items: center;
   gap: 3.2rem;
 }
 
+.image-pokemon{
+  border: #000 0.2rem solid;
+  min-height: 15rem;
+  justify-content: center;
+  background-color: #363636;
+}
+
 .pokemon-card {
+  border: 1rem solid #ffd600;
+  border-radius: 1rem; /* Only this! */
   width: 36rem;
-  min-height: 42rem;
+  height: 49rem;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
     rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
   background-color: #fff;
-  border-radius: 0.2rem;
-  -webkit-border-radius: 0.2rem;
-  -moz-border-radius: 0.2rem;
-  -ms-border-radius: 0.2rem;
-  -o-border-radius: 0.2rem;
   padding: 1.6rem;
   position: relative;
 }
 
-.pokemon-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 40%;
-  transform: rotate(180deg);
-  background-color: #ebfbf1;
-  border-radius: 50% 50% 100% 0% / 99% 100% 0% 1%;
-  z-index: 0;
-  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-  -webkit-border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-  -moz-border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-  -ms-border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-  -o-border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
 
-/* .pokemon-card:hover::before {
-  -webkit-border-radius: 50% 50% 100% 0% / 99% 100% 0% 1%;
-  -moz-border-radius: 50% 50% 100% 0% / 99% 100% 0% 1%;
-  -ms-border-radius: 50% 50% 100% 0% / 99% 100% 0% 1%;
-  -o-border-radius: 50% 50% 100% 0% / 99% 100% 0% 1%;
-  transition: all 0.3s;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -ms-transition: all 0.3s;
-  -o-transition: all 0.3s;
-} */
-
-
-.pokemon-card:hover::before {
-  border-radius: 50% 50% 100% 0% / 99% 100% 0% 1%;
-  -webkit-border-radius: 50% 50% 100% 0% / 99% 100% 0% 1%;
-  -moz-border-radius: 50% 50% 100% 0% / 99% 100% 0% 1%;
-  -ms-border-radius: 50% 50% 100% 0% / 99% 100% 0% 1%;
-  -o-border-radius: 50% 50% 100% 0% / 99% 100% 0% 1%;
-  transition: all 0.3s;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -ms-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  
-}
 
 .pokemon-card:hover {
-  transform: scale(1.03);
+  z-index: 50;
+  transform: scale(1.1);
   transition: all 0.3s;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
@@ -180,19 +144,28 @@ figure {
 }
 
 .pokemon-name {
-  font-size: 3.2rem;
-  text-align: center;
+  font-size: 2rem;
+  text-align:left;
   color: #000;
   text-transform: capitalize;
-  margin-top: 2.4rem;
-  
+  margin-top: 0.2rem;
+  margin-left: 0.2rem;
+}
+
+.pokemon-type {
+  font-size: 2rem;
+  text-align:right;
+  color: #000;
+  text-transform: capitalize;
+  font-weight: 600;
+  margin-top: 0.2rem;
+  margin-left: 0.2rem;
 }
 
 .pokemon-highlight {
   display: flex;
   justify-content: center;
   align-items: center;
-  
 
   margin: 1.6rem 0;
 
@@ -211,10 +184,8 @@ figure {
 }
 
 .pokemon-image {
-  /* width: 60%; */
-  
-  height: 10rem;
-  margin-bottom: 5rem;
+  width: auto;
+  height: 12rem;
 }
 
 pokemon-info {
@@ -237,4 +208,43 @@ pokemon-info {
     padding: 0.6rem 0;
     cursor: pointer;
   }
+}
+
+
+
+
+
+
+
+
+.pokemon-highlight-moves {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+
+  margin: 1.6rem 0;
+
+  & p {
+    padding: 0.6rem 2.4rem;
+    background-color: #30303077;
+    border-radius: 20rem;
+    -webkit-border-radius: 20rem;
+    -moz-border-radius: 20rem;
+    -ms-border-radius: 20rem;
+    -o-border-radius: 20rem;
+    color: #fff;
+    font-weight: bold;
+    text-transform: capitalize;
+  }
+}
+
+
+.grid-one-cols {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.6rem;
+  text-align: center;
+  
+  align-items: end;
 }
